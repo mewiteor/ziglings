@@ -25,7 +25,7 @@ pub fn main() void {
     // value in the program at runtime. It starts at 0, and we
     // will get the final value by performing the sequence of
     // instructions above.
-    var value: u32 = 0;
+    comptime var value: u32 = 0;
 
     // This "index" variable will only be used at compile time in
     // our loop.
@@ -35,7 +35,7 @@ pub fn main() void {
     // at compile time.
     //
     // Please fix this to loop once per "instruction":
-    ??? (i < instructions.len) : (???) {
+    inline while (i < instructions.len) : (i += 3) {
 
         // This gets the digit from the "instruction". Can you
         // figure out why we subtract '0' from it?
